@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "server": "live-server dist/",
-    "dev": "start npm run watch && start npm run server"
+    "dev": " npm run watch  |  npm run server"
   },
   "author": "@rdad",
   "license": "ISC",

@@ -1,0 +1,16 @@
+/* *********** Feuille de style de l'index.html ***********
+
+
+		        Couleurs du site:
+
+		        Noir:	#000000;	;
+		        Blanc: 	#FFFFFF;	;
+		        Gris: 	#7A7A7A;	;
+
+/* *********** Importations de Police via Google Fonts ***********/
+
+			/*****! Raleway !*****/
+
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,200,100,600,800);
+
+/*		     font-family: 'Raleway', sans-serif

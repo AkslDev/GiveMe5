@@ -14,3 +14,27 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300,200,100,600,800);
 
 /*		     font-family: 'Raleway', sans-serif
+
+/* ********** Couleurs ********** */
+
+/* *********** Stylisation du HTML ***********/
+html{
+
+}
+/* *********** Stylisation du BODY ***********/
+body{
+	font-family: 'Raleway', sans-serif;
+	margin:0;
+	overflow: hidden;
+	background-image: url('img/fond.jpeg');
+	background-size: cover;
+}
+
+/* *********** Stylisation de la NAV ***********/
+nav{
+	background-color: transparent!important;
+    	position: absolute;
+    	margin-top: 1%;
+    	width: 100%;
+    	padding: 10px;
+}

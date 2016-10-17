@@ -1,5 +1,5 @@
-import logger from './logger';
+import logger from './logger.js';
 
-document.write('Welcome to my application.');
 logger(); // yes
+
 console.log('app loaded');

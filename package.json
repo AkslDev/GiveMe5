@@ -6,7 +6,7 @@
   "scripts": {
     "watch": "webpack --watch",
     "server": "live-server dist/",
-    "dev": " npm run watch  |  npm run server"
+    "dev": "npm run watch  |  npm run server"
   },
   "author": "@rdad",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "babel-preset-es2015": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "live-server": "^1.1.0",
+    "moment": "^2.15.1",
     "node-libs-browser": "^1.0.0",
     "webpack": "^1.13.2"
   }

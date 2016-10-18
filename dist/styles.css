@@ -61,7 +61,10 @@ a:hover{
 a:focus{
 	outline: none;
 }
-/* ********** Scroll-Bar ********** */
+/* *********** Classe Display:none; *********** */
+.dispnone{
+	/*display:none!important;*/
+}
 /* *********** Stylisation du Scroll *********** */
 ::-webkit-scrollbar{
   width:4px;
@@ -71,8 +74,6 @@ a:focus{
    background-color: rgba(34,34,34,0.5);
 
 }  
-/* ********** Couleurs ********** */
-
 /* *********** Stylisation du HTML ***********/
 html{
 
@@ -176,4 +177,14 @@ nav{
 .student:hover{
 	background-color:#adadad;
 	cursor:pointer;
+}
+.userimg{
+	background-image: url('img/h.png');
+	margin-top: -3em;
+	height: 64px;
+	width:64px;
+	border:1px solid #2B2B2B; 
+	background-size: cover;
+	border-radius: 100%;
+	display: inline-block;
 }

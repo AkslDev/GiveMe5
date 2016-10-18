@@ -46,28 +46,49 @@
 
 	'use strict';
 
-	var _logger = __webpack_require__(1);
+	var _studentClass = __webpack_require__(1);
 
-	var _logger2 = _interopRequireDefault(_logger);
+	var _studentClass2 = _interopRequireDefault(_studentClass);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	(0, _logger2.default)(); // yes
-	console.log('app loaded');
+	(0, _studentClass2.default)(); // Importation de student-class.js
+
+	!jQuery(document).ready(function ($) {
+		// Ajout de Profil
+		$('#add').on('click', function () {
+			console.log('ca marche');
+		});
+	});
 
 /***/ },
 /* 1 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
 
 	exports.default = function () {
-		console.log('logger.js is RUNNING!!');
+		var Student =
+		/**
+	  * Represente une couleur dans la palette
+	  * @param  {string} Prénom de l'élève
+	  * @return {string}  Nom de l'élève
+	  */
+		function Student(prenom, nom) {
+			_classCallCheck(this, Student);
+
+			this.prenom = prenom;
+			this.nom = nom;
+		};
+
+		;
 	};
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /***/ }
 /******/ ]);

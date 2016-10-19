@@ -196,6 +196,10 @@ nav{
 	margin-bottom: 1.5em;
 	color: #222222;
 }
+.student p{
+	color:#FF5656;
+	margin-bottom: 1.5em;
+}
 .student a{
 	margin:15px 10px;
 	color: #2B2B2B;

@@ -46,11 +46,11 @@
 
 	'use strict';
 
-	var _student_class = __webpack_require__(2);
+	var _student_class = __webpack_require__(1);
 
 	var _student_class2 = _interopRequireDefault(_student_class);
 
-	var _student_list = __webpack_require__(4);
+	var _student_list = __webpack_require__(2);
 
 	var _student_list2 = _interopRequireDefault(_student_list);
 
@@ -65,7 +65,7 @@
 		init: function init() {
 
 			// Eleves de la classe
-			var students = [new _student_class2.default('Aksl', 'Cqn', 23, 'img/axel.jpg'), new _student_class2.default('Aksl', 'Cqn', 25, 'img/axel.jpg')];
+			var students = [new _student_class2.default('Stan', 'Xiong', 0), new _student_class2.default('Mattieu', 'Vendeville', 0), new _student_class2.default('Félix', 'Nahon', 0), new _student_class2.default('Victor', 'Mouton', 0), new _student_class2.default('Bastien', 'Luhaire', 0), new _student_class2.default('Clément', 'Teboul', 0), new _student_class2.default('Pierre', 'Saigot', 0), new _student_class2.default('Julien', 'Gastineau', 0), new _student_class2.default('Clément', 'Dussol', 0), new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 		}
@@ -74,8 +74,7 @@
 	giveme5.init();
 
 /***/ },
-/* 1 */,
-/* 2 */
+/* 1 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -104,6 +103,71 @@
 	};
 
 	exports.default = _class;
+
+/***/ },
+/* 2 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	exports.default = function (students) {
+		var $original = $('#user').detach();
+		// Boucle pour ajouté un élève
+		for (var i = students.length - 1; i >= 0; i--) {
+			creer_card(students[i], $original, i);
+		}
+
+		// Fonction onClick pour modifier un élève
+
+		$(".student").on('click', function () {
+			$('#modif').removeClass('dispnone');
+			console.log('le clic a marché');
+
+			var profil_id = this.id,
+			    prenom = students[profil_id].prenom,
+			    nom = students[profil_id].nom,
+			    points = students[profil_id].points,
+			    pics = students[profil_id].pics,
+			    modif = $('#modif');
+
+			modif.children('.modifuserimg').css('background-image', 'url(' + students[profil_id].pics + ')');
+			modif.children('h4').text(students[profil_id].prenom + ' ' + students[profil_id].nom);
+			modif.children('p').text(students[profil_id].points + ' pts');
+		});
+	};
+
+	// Appel de jQuery
+	var $ = __webpack_require__(3);
+
+	function creer_card(student, $original, id) {
+
+		var clone = $original.clone();
+		clone.removeAttr('id');
+		clone.attr('id', id);
+
+		clone.children('h4').text(student.prenom + ' ' + student.nom);
+		clone.children('p').text(student.points + ' pts');
+		clone.children('.userimg').css('background-image', 'url(' + student.pics + ')');
+		clone.appendTo('#userlist');
+
+		// Fonction pour ajouté ou retirer des points
+		clone.find('.present').on('click', function () {
+			student.points += 10;
+			clone.children('p').text(student.points + ' pts');
+		});
+		clone.find('.abs').on('click', function () {
+			student.points -= 10;
+			clone.children('p').text(student.points + ' pts');
+		});
+		clone.find('.late').on('click', function () {
+			student.points -= 2;
+			clone.children('p').text(student.points + ' pts');
+		});
+	}
 
 /***/ },
 /* 3 */
@@ -10330,54 +10394,6 @@
 	return jQuery;
 	} );
 
-
-/***/ },
-/* 4 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	exports.default = function (students) {
-
-		var $original = $('#user').detach();
-
-		for (var i = students.length - 1; i >= 0; i--) {
-
-			var clone = $original.clone();
-			clone.removeAttr('id');
-			clone.attr('id', i);
-
-			clone.children('h4').text(students[i].prenom + ' ' + students[i].nom);
-			clone.children('.userimg').css('background-image', 'url(' + students[i].pics + ')');
-			clone.appendTo('#userlist');
-		}
-
-		$("#add").on('click', function () {
-			$original.clone().appendTo('#userlist');
-			console.log('Eleve ajouté');
-		});
-
-		$(".student").mousedown(function (event) {
-			$("#modif").removeClass('dispnone');
-
-			var profil_id = this.id,
-			    prenom = students[profil_id].prenom,
-			    nom = students[profil_id].nom,
-			    points = students[profil_id].points,
-			    pics = students[profil_id].pics,
-			    modif = $('#modif');
-
-			modif.children('.modifuserimg').css('background-image', 'url(' + students[profil_id].pics + ')');
-			modif.children('h4').text(students[profil_id].prenom + ' ' + students[profil_id].nom);
-			modif.children('p').text(students[profil_id].points + ' pts');
-		});
-	};
-
-	var $ = __webpack_require__(3);
 
 /***/ }
 /******/ ]);

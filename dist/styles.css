@@ -63,7 +63,7 @@ a:focus{
 }
 /* *********** Classe Display:none; *********** */
 .dispnone{
-	/*display:none!important;*/
+	display:none!important;
 }
 /* *********** Stylisation du Scroll *********** */
 ::-webkit-scrollbar{
@@ -126,8 +126,47 @@ nav{
 #modify{
 	margin-left: -63%;
 }
-
-/* *********** Stylisation de Notes *********** */
+/* *********** Stylisation de la partie gauche *********** */
+.pattern{
+    	background-image: url(img/img1.jpeg);
+    	height: 700px;
+    	background-size: cover;
+    	margin-left: 0;
+    	padding: 2em 2em;
+    	text-align: center;
+}
+.modif{
+	padding:10%;
+	background-color: rgba(34,34,34,0.7);
+}
+.modifuserimg{
+	background-image: url('img/h.png');
+	margin-top: -2em;
+	height: 90px;
+	width:90px;
+	border:1px solid #2B2B2B; 
+	background-size: cover;
+	border-radius: 100%;
+	display: inline-block;
+}
+.modif h4{
+	color: #ff5656;
+	margin:1em;
+}
+.modif p{
+	margin:1em 0 2em;
+}
+.modif a{
+	margin:15px 10px;
+	color: #dbdbdb;
+}
+.modif i:hover{
+	cursor: pointer;
+	color:#ff5656;
+	transition: all ease .5s;
+	transform: scale(1.4);
+}
+/* *********** Stylisation de la partie droite *********** */
 .content{
 	padding-top:60px;
 	height: 2000px;
@@ -138,13 +177,6 @@ nav{
    	overflow: scroll!important;
     	position: relative;
     	height:670px
-}
-
-.pattern{
-	background-image: url(img/img1.jpeg);
-	height: 700px;
-	background-size: cover;
-	margin-left:0;
 }
 .student{
 	width: 40%;
@@ -181,8 +213,8 @@ nav{
 .userimg{
 	background-image: url('img/h.png');
 	margin-top: -3em;
-	height: 64px;
-	width:64px;
+	height: 63px;
+	width:63px;
 	border:1px solid #2B2B2B; 
 	background-size: cover;
 	border-radius: 100%;

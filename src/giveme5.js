@@ -11,13 +11,12 @@ let giveme5 = {
 
 		// Eleves de la classe
 		let students =  [
-			new Student ('Aksl', 'Cqn','img/axel.jpg'),
-			new Student ('Clement', 'Teboul'),
-			new Student ('Victor', 'Sheep')
+			new Student ('Aksl', 'Cqn',23,'img/axel.jpg'),
+			new Student ('Aksl', 'Cqn',25,'img/axel.jpg'),
 		]
+		console.log('Liste des élèves chargée');
 		studentlist(students);
 	}
-
 }
 
 	giveme5.init();

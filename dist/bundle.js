@@ -65,10 +65,10 @@
 		init: function init() {
 
 			// Eleves de la classe
-			var students = [new _student_class2.default('Aksl', 'Cqn', 'img/axel.jpg'), new _student_class2.default('Clement', 'Teboul'), new _student_class2.default('Victor', 'Sheep')];
+			var students = [new _student_class2.default('Aksl', 'Cqn', 23, 'img/axel.jpg'), new _student_class2.default('Aksl', 'Cqn', 25, 'img/axel.jpg')];
+			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 		}
-
 	};
 
 	giveme5.init();
@@ -89,15 +89,17 @@
 	var _class =
 	// Création de la classe Student
 	/**
-	 * Represente une couleur dans la palette
+	 * Represente un Eleve
 	 * @param  {string} Prénom de l'élève
 	 * @return {string}  Nom de l'élève
+	 * @param  {number} Points de l'élève
 	 */
-	function _class(prenom, nom, pics) {
+	function _class(prenom, nom, points, pics) {
 		_classCallCheck(this, _class);
 
 		this.prenom = prenom;
 		this.nom = nom;
+		this.points = points || 0;
 		this.pics = pics || 'img/h.png';
 	};
 
@@ -10347,6 +10349,7 @@
 
 			var clone = $original.clone();
 			clone.removeAttr('id');
+			clone.attr('id', i);
 
 			clone.children('h4').text(students[i].prenom + ' ' + students[i].nom);
 			clone.children('.userimg').css('background-image', 'url(' + students[i].pics + ')');
@@ -10356,6 +10359,21 @@
 		$("#add").on('click', function () {
 			$original.clone().appendTo('#userlist');
 			console.log('Eleve ajouté');
+		});
+
+		$(".student").mousedown(function (event) {
+			$("#modif").removeClass('dispnone');
+
+			var profil_id = this.id,
+			    prenom = students[profil_id].prenom,
+			    nom = students[profil_id].nom,
+			    points = students[profil_id].points,
+			    pics = students[profil_id].pics,
+			    modif = $('#modif');
+
+			modif.children('.modifuserimg').css('background-image', 'url(' + students[profil_id].pics + ')');
+			modif.children('h4').text(students[profil_id].prenom + ' ' + students[profil_id].nom);
+			modif.children('p').text(students[profil_id].points + ' pts');
 		});
 	};
 

@@ -65,7 +65,7 @@
 		init: function init() {
 
 			// Eleves de la classe
-			var students = [new _student_class2.default('Stan', 'Xiong', 0), new _student_class2.default('Mattieu', 'Vendeville', 0), new _student_class2.default('Félix', 'Nahon', 0), new _student_class2.default('Victor', 'Mouton', 0), new _student_class2.default('Bastien', 'Luhaire', 0), new _student_class2.default('Clément', 'Teboul', 0), new _student_class2.default('Pierre', 'Saigot', 0), new _student_class2.default('Julien', 'Gastineau', 0), new _student_class2.default('Clément', 'Dussol', 0), new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
+			var students = [new _student_class2.default('Stan', 'Xiong', 0), new _student_class2.default('Mattieu', 'Vendeville', 0), new _student_class2.default('Clément', 'Teboul', 0), new _student_class2.default('Pierre', 'Saigot', 0), new _student_class2.default('Félix', 'Nahon', 0), new _student_class2.default('Victor', 'Mouton', 0), new _student_class2.default('Bastien', 'Luhaire', 0), new _student_class2.default('Julien', 'Gastineau', 0), new _student_class2.default('Clément', 'Dussol', 0), new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 		}

@@ -136,25 +136,29 @@ nav{
     	text-align: center;
 }
 .modif{
-	padding:10%;
-	background-color: rgba(34,34,34,0.7);
+	padding:27.5%;
+	background-color: rgba(34,34,34,0.74);
 }
 .modifuserimg{
 	background-image: url('img/h.png');
-	margin-top: -2em;
-	height: 90px;
-	width:90px;
+   	margin-top: 0em;
+   	height: 150px;
+   	width: 150px;
 	border:1px solid #2B2B2B; 
 	background-size: cover;
 	border-radius: 100%;
 	display: inline-block;
 }
 .modif h4{
+	font-size: 1.5em;
+    	font-weight: 200;
 	color: #ff5656;
 	margin:1em;
 }
 .modif p{
 	margin:1em 0 2em;
+	font-size: 1.1em;
+    	font-weight: 100;
 }
 .modif a{
 	margin:15px 10px;
@@ -184,7 +188,7 @@ nav{
 	text-align:center;
 	padding: 1em;
 	margin-left:3em;
-	margin-bottom: 7em;
+	margin-bottom: 8em;
 	border: 1px solid #2b2b2b;
 	height: auto;
 }
@@ -212,6 +216,8 @@ nav{
 }
 .student:hover{
 	background-color:#adadad;
+	transition: all ease 0.7s;
+	transform: scale(1.1);
 	cursor:pointer;
 }
 .userimg{

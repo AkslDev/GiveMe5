@@ -120,12 +120,16 @@
 		for (var i = students.length - 1; i >= 0; i--) {
 			creer_card(students[i], $original, i);
 		}
-
+		// Fonction click pour faire apparaitre/disparaitre le form
+		$('#add').on('click', function () {
+			$('#create').removeClass('dispnone');
+		});
+		$('#submit').on('click', function () {
+			$('#create').addClass('dispnone');
+		});
 		// Fonction onClick pour modifier un élève
-
 		$(".student").on('click', function () {
 			$('#modif').removeClass('dispnone');
-			console.log('le clic a marché');
 
 			var profil_id = this.id,
 			    prenom = students[profil_id].prenom,
@@ -143,6 +147,7 @@
 	// Appel de jQuery
 	var $ = __webpack_require__(3);
 
+	// Fonction creer_card
 	function creer_card(student, $original, id) {
 
 		var clone = $original.clone();
@@ -154,19 +159,26 @@
 		clone.children('.userimg').css('background-image', 'url(' + student.pics + ')');
 		clone.appendTo('#userlist');
 
-		// Fonction pour ajouté ou retirer des points
+		// Fonctions pour ajouter ou retirer des points depuis les cards
 		clone.find('.present').on('click', function () {
 			student.points += 10;
 			clone.children('p').text(student.points + ' pts');
 		});
+
 		clone.find('.abs').on('click', function () {
 			student.points -= 10;
 			clone.children('p').text(student.points + ' pts');
 		});
+
 		clone.find('.late').on('click', function () {
 			student.points -= 2;
 			clone.children('p').text(student.points + ' pts');
 		});
+		// Fonctions pour ajouter ou retirer des points depuis la section " Modif "
+		//
+		//
+		//
+		//
 	}
 
 /***/ },

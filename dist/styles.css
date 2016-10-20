@@ -85,6 +85,10 @@ body{
 	overflow: hidden;
 	color:white;
 	background-color: #dbdbdb;
+	-webkit-user-select: none;
+	-moz-user-select: -moz-none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 /* *********** Stylisation de la NAV ***********/
@@ -120,23 +124,30 @@ nav{
 	background-color:#2b2b2b;
 	color:#ff5656;
 }
-#add{
-	margin-left: -20.2%;
+.btn{
+    	display: inline-block;
+    	padding: 14px;
+    	height: 60px;
+    	margin-top: -5.8em;
+    	font-weight: 100;
 }
-#modify{
-	margin-left: -63%;
+.btn:hover{
+	cursor: pointer;
+	background-color:#2b2b2b;
+	color:#ff5656;
+	transition: all ease .5s;
 }
 /* *********** Stylisation de la partie gauche *********** */
 .pattern{
     	background-image: url(img/img1.jpeg);
     	height: 700px;
     	background-size: cover;
-    	margin-left: 0;
+    	margin-left: 15px;
     	padding: 2em 2em;
     	text-align: center;
 }
 .modif{
-	padding:27.5%;
+	padding:27.4%;
 	background-color: rgba(34,34,34,0.74);
 }
 .modifuserimg{
@@ -229,4 +240,113 @@ nav{
 	background-size: cover;
 	border-radius: 100%;
 	display: inline-block;
+}
+/* *********** Stylisation de la Section pour une card élève *********** */
+.create{
+    	z-index: 1000;
+    	position: absolute;
+    	width: 100%;
+    	left: 0!important;
+    	padding: 6em 10em 7em;		
+    	background-color: rgba(34,34,34,0.74);
+    	text-align: center;
+    	height: auto;
+}
+.createstudent{
+    	background-color: #dbdbdb;
+    	width: 50%;
+    	padding: 6em 5em 3em;
+    	display: block;
+    	margin: 0 auto;
+}
+.createstudent p{
+	font-weight: 300;
+	font-size:1.4em;
+	color:#FF5656;
+	margin-bottom: 1.3em;
+}
+.btnsubmit{
+	color: white;
+	background-color:#5E5E5E;
+	padding:1em 1.5em;
+	margin: 3em auto 0em;
+	display:inline-block;
+	border:1px solid #5E5E5E;
+	border-radius:5px; 
+}
+.btnsubmit:hover{
+	cursor: pointer;
+	background-color:#2b2b2b;
+	color:#ff5656;
+	transition: all ease .5s;
+}
+/* *********** Stylisation des inputs *********** */
+.inpttxt{ 
+  position:relative; 
+  margin: 1.5em auto;
+  display: inline-block;
+}
+input{
+  font-size:18px;
+  padding:10px 10px 10px 5px;
+  display:block;
+  width:300px;
+  color:#FF5656;
+  border:none;
+  border-bottom:1px solid #5e5e5e;
+  background: transparent;
+}
+input:focus{ 
+	outline:none; 
+}
+label{
+	color:#5e5e5e; 
+	font-size:18px;
+	font-weight:normal;
+	position:absolute;
+	pointer-events:none;
+	left:5px;
+	top:10px;
+	transition:0.2s ease all; 
+	-moz-transition:0.2s ease all; 
+	-webkit-transition:0.2s ease all;
+}
+input:focus ~ label, input:valid ~ label{
+	top:-20px;
+	font-size:14px;
+	color:#FF5656;
+}
+.bar{
+	position:relative;
+	display:block;
+	width:300px; 
+}
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px; 
+  width:0;
+  bottom:1px; 
+  position:absolute;
+  background:#FF5656; 
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:50%;
+}
+.bar:after {
+  right:50%; 
+}
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:50%;
+}
+.texteffect {
+  position:absolute;
+  height:60%; 
+  width:100px; 
+  top:25%; 
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
 }

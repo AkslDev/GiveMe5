@@ -56,7 +56,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Importation de student-class.js
+	// Importation de mes fichiers JavaScript
+
 	console.log('GiveMeFive est lancé');
 
 	var giveme5 = {
@@ -65,7 +66,17 @@
 		init: function init() {
 
 			// Eleves de la classe
-			var students = [new _student_class2.default('Stan', 'Xiong', 0), new _student_class2.default('Mattieu', 'Vendeville', 0), new _student_class2.default('Clément', 'Teboul', 0), new _student_class2.default('Pierre', 'Saigot', 0), new _student_class2.default('Félix', 'Nahon', 0), new _student_class2.default('Victor', 'Mouton', 0), new _student_class2.default('Bastien', 'Luhaire', 0), new _student_class2.default('Julien', 'Gastineau', 0), new _student_class2.default('Clément', 'Dussol', 0), new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
+			var students = [
+			// new Student ('Stan', 'Xiong',0,),
+			// new Student ('Mattieu', 'Vendeville',0,),
+			// new Student ('Clément', 'Teboul',0,),
+			// new Student ('Pierre', 'Saigot',0,),
+			// new Student ('Félix', 'Nahon',0,),
+			// new Student ('Victor', 'Mouton',0,),
+			// new Student ('Bastien', 'Luhaire',0,),
+			// new Student ('Julien', 'Gastineau',0,),
+			// new Student ('Clément', 'Dussol',0,),
+			new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 		}
@@ -115,18 +126,31 @@
 	});
 
 	exports.default = function (students) {
+
+		// Création de mes variables
+
 		var $original = $('#user').detach();
+
 		// Boucle pour ajouté un élève
+
 		for (var i = students.length - 1; i >= 0; i--) {
 			creer_card(students[i], $original, i);
 		}
+
 		// Fonction click pour faire apparaitre/disparaitre le form
 		$('#add').on('click', function () {
 			$('#create').removeClass('dispnone');
 		});
 		$('#submit').on('click', function () {
+
 			$('#create').addClass('dispnone');
+			var prenom = $('#firstname').val(),
+			    nom = $('#lastname').val(),
+			    eleve = new _student_class2.default(prenom, nom);
+			students.push(eleve);
+			creer_card(eleve, $original);
 		});
+
 		// Fonction onClick pour modifier un élève
 		$(".student").on('click', function () {
 			$('#modif').removeClass('dispnone');
@@ -142,7 +166,27 @@
 			modif.children('h4').text(students[profil_id].prenom + ' ' + students[profil_id].nom);
 			modif.children('p').text(students[profil_id].points + ' pts');
 		});
+		var modif = $('#modif');
+
+		modif.find('.present').on('click', function () {
+			students[profil_id].points += 10;
+			modif.children('p').text(students[profil_id].points + ' pts');
+		});
+		modif.find('.late').on('click', function () {
+			students[profil_id].points -= 2;
+			modif.children('p').text(students[profil_id].points + ' pts');
+		});
+		modif.find('.abs').on('click', function () {
+			students[profil_id].points -= 10;
+			modif.children('p').text(students[profil_id].points + ' pts');
+		});
 	};
+
+	var _student_class = __webpack_require__(1);
+
+	var _student_class2 = _interopRequireDefault(_student_class);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// Appel de jQuery
 	var $ = __webpack_require__(3);
@@ -175,11 +219,9 @@
 			clone.children('p').text(student.points + ' pts');
 		});
 		// Fonctions pour ajouter ou retirer des points depuis la section " Modif "
-		//
-		//
-		//
-		//
 	}
+
+	// Function students
 
 /***/ },
 /* 3 */

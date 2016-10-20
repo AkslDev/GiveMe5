@@ -1,4 +1,6 @@
-// Importation de student-class.js
+// Importation de mes fichiers JavaScript
+import interface from './main';
+import points from './points';
 import Student from './student_class';
 import studentlist from './student_list';
 
@@ -11,15 +13,15 @@ let giveme5 = {
 
 		// Eleves de la classe
 		let students =  [
-			new Student ('Stan', 'Xiong',0,),
-			new Student ('Mattieu', 'Vendeville',0,),
-			new Student ('Clément', 'Teboul',0,),
-			new Student ('Pierre', 'Saigot',0,),
-			new Student ('Félix', 'Nahon',0,),
-			new Student ('Victor', 'Mouton',0,),
-			new Student ('Bastien', 'Luhaire',0,),
-			new Student ('Julien', 'Gastineau',0,),
-			new Student ('Clément', 'Dussol',0,),
+			// new Student ('Stan', 'Xiong',0,),
+			// new Student ('Mattieu', 'Vendeville',0,),
+			// new Student ('Clément', 'Teboul',0,),
+			// new Student ('Pierre', 'Saigot',0,),
+			// new Student ('Félix', 'Nahon',0,),
+			// new Student ('Victor', 'Mouton',0,),
+			// new Student ('Bastien', 'Luhaire',0,),
+			// new Student ('Julien', 'Gastineau',0,),
+			// new Student ('Clément', 'Dussol',0,),
 			new Student ('Aksl', 'Cqn',0,'img/axel.jpg'),
 			new Student ('Loan', 'Campan',0,),
 			new Student ('Joel', 'Alves',0,)

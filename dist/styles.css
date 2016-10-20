@@ -281,47 +281,48 @@ nav{
 	transition: all ease .5s;
 }
 /* *********** Stylisation des inputs *********** */
-.inpttxt{ 
+.inpttxt 			  { 
   position:relative; 
-  margin: 1.5em auto;
-  display: inline-block;
+  margin-bottom:45px; 
+  display:inline-block;
 }
-input{
+input {
   font-size:18px;
   padding:10px 10px 10px 5px;
   display:block;
   width:300px;
-  color:#FF5656;
   border:none;
-  border-bottom:1px solid #5e5e5e;
-  background: transparent;
+  color: #FF5656;
+  border-bottom:1px solid #757575;
+  background:transparent;
 }
-input:focus{ 
-	outline:none; 
+input:focus 		{ outline:none; }
+
+label 				 {
+  color:#5E5E5E; 
+  font-size:18px;
+  font-weight:normal;
+  position:absolute;
+  pointer-events:none;
+  left:5px;
+  top:10px;
+  transition:0.2s ease all; 
+  -moz-transition:0.2s ease all; 
+  -webkit-transition:0.2s ease all;
 }
-label{
-	color:#5e5e5e; 
-	font-size:18px;
-	font-weight:normal;
-	position:absolute;
-	pointer-events:none;
-	left:5px;
-	top:10px;
-	transition:0.2s ease all; 
-	-moz-transition:0.2s ease all; 
-	-webkit-transition:0.2s ease all;
+
+input:focus ~ label, input:valid ~ label 		{
+  top:-20px;
+  font-size:14px;
+  color:#FF5656;
 }
-input:focus ~ label, input:valid ~ label{
-	top:-20px;
-	font-size:14px;
-	color:#FF5656;
-}
+
 .bar{
-	position:relative;
-	display:block;
-	width:300px; 
+	position:relative; 
+	display:block; 
+	width:300px;
 }
-.bar:before, .bar:after 	{
+.bar:before, .bar:after{
   content:'';
   height:2px; 
   width:0;
@@ -332,16 +333,19 @@ input:focus ~ label, input:valid ~ label{
   -moz-transition:0.2s ease all; 
   -webkit-transition:0.2s ease all;
 }
-.bar:before {
+.bar:before{
   left:50%;
 }
-.bar:after {
+.bar:after{
   right:50%; 
 }
+
+/* active state */
 input:focus ~ .bar:before, input:focus ~ .bar:after {
   width:50%;
 }
-.texteffect {
+
+.highlight {
   position:absolute;
   height:60%; 
   width:100px; 
@@ -350,3 +354,4 @@ input:focus ~ .bar:before, input:focus ~ .bar:after {
   pointer-events:none;
   opacity:0.5;
 }
+/*

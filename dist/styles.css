@@ -147,8 +147,8 @@ nav{
     	text-align: center;
 }
 .modif{
-	padding: 30.7%;
-	background-color: rgba(34,34,34,0.74);
+	padding: 9.6em;
+	background-color: rgba(34,34,34,0.85);
 }
 .modifuserimg{
 	background-image: url('img/h.png');
@@ -164,10 +164,10 @@ nav{
 	font-size: 1.5em;
     	font-weight: 200;
 	color: #ff5656;
-	margin:1em;
+	margin-top:1.5em;
 }
 .modif p{
-	margin:1em 0 2em;
+	margin:2em 0 2em;
 	font-size: 1.1em;
     	font-weight: 100;
 }

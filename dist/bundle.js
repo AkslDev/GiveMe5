@@ -60,6 +60,8 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import moment from './moment';
+
 	console.log('GiveMeFive est lancé'); // Importation de student-class.js
 
 
@@ -69,17 +71,7 @@
 		init: function init() {
 
 			// Eleves de la classe
-			var students = [
-			// new Student ('Stan', 'Xiong',0,),
-			// new Student ('Mattieu', 'Vendeville',0,),
-			// new Student ('Clément', 'Teboul',0,),
-			// new Student ('Pierre', 'Saigot',0,),
-			// new Student ('Félix', 'Nahon',0,),
-			// new Student ('Victor', 'Mouton',0,),
-			// new Student ('Bastien', 'Luhaire',0,),
-			// new Student ('Julien', 'Gastineau',0,),
-			// new Student ('Clément', 'Dussol',0,),
-			new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
+			var students = [new _student_class2.default('Stan', 'Xiong', 0), new _student_class2.default('Mattieu', 'Vendeville', 0), new _student_class2.default('Clément', 'Teboul', 0), new _student_class2.default('Pierre', 'Saigot', 0), new _student_class2.default('Félix', 'Nahon', 0), new _student_class2.default('Victor', 'Mouton', 0), new _student_class2.default('Bastien', 'Luhaire', 0), new _student_class2.default('Julien', 'Gastineau', 0), new _student_class2.default('Clément', 'Dussol', 0), new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 			(0, _student_modif2.default)(students);
@@ -151,8 +143,9 @@
 			    nom = $('#lastname').val(),
 			    id = new_user_id,
 			    eleve = new _student_class2.default(prenom, nom);
-
+			// Push de mon nouvel eleve dans le tableau students
 			students.push(eleve);
+			// Appel de la fonction
 			creer_card(eleve, $original, id);
 			(0, _student_modif2.default)(students);
 		});
@@ -203,7 +196,7 @@
 		});
 	}
 
-	// Function pour ajouter un élève lors d'un clic sur le bouton
+	// Function pour ajouter un élève lors d'un clic sur le bouton "Ajouter un élève"
 
 /***/ },
 /* 3 */

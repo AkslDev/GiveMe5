@@ -35,7 +35,7 @@ function creer_card(student, $original, id){
 		});
 }
 
-// Function pour ajouter un élève lors d'un clic sur le bouton
+// Function pour ajouter un élève lors d'un clic sur le bouton "Ajouter un élève"
 export default function(students,) {
 
 	let $original = $('#user').detach();
@@ -44,8 +44,7 @@ export default function(students,) {
 	for (let i = students.length - 1; i >= 0; i--) {
 		creer_card(students[i], $original, i);
 	}
-
-
+	
 	// Fonction click pour faire apparaitre/disparaitre le form
 	$('#add').on('click', function() {
 		$('#create').removeClass('dispnone');
@@ -59,11 +58,10 @@ export default function(students,) {
 			nom		= 	$('#lastname').val(),
 			id		= 	new_user_id,
 		 	eleve 		= 	new Student(prenom, nom);
-
+		 	// Push de mon nouvel eleve dans le tableau students
 			students.push(eleve);
+			// Appel de la fonction
 			creer_card(eleve, $original, id);
-				studentmodif(students);
+			studentmodif(students);
 	});
-
-
 }

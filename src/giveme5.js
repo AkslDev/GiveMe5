@@ -2,7 +2,7 @@
 import Student from './student_class';
 import studentlist from './student_list';
 import studentmodif from './student_modif';
-// import studentpoints from './student_points';
+import studentpoints from './student_points';
 
 
 console.log('GiveMeFive est lancé');

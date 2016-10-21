@@ -46,16 +46,14 @@ export default function(students) {
 
 	let new_user_id = students.length += 1;
 
-
 	// Fonction click pour faire apparaitre/disparaitre le form
 	$('#add').on('click', function() {
 		$('#create').removeClass('dispnone');
 	});
+
 	//Fonction qui créer une card lors d'un clic sur Ajouter un élève
 	$('#submit').on('click', function() {
-
 		$('#create').addClass('dispnone');
-
 		let 	prenom	= 	$('#firstname').val(),
 			nom		= 	$('#lastname').val(),
 			id		= 	new_user_id,
@@ -64,4 +62,5 @@ export default function(students) {
 			students.push(eleve);
 			creer_card(eleve, $original, id);
 	});
+
 }

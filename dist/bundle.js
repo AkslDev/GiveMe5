@@ -58,13 +58,14 @@
 
 	var _student_modif2 = _interopRequireDefault(_student_modif);
 
+	var _student_points = __webpack_require__(5);
+
+	var _student_points2 = _interopRequireDefault(_student_points);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import studentpoints from './student_points';
-
-
-	console.log('GiveMeFive est lancé'); // Importation de student-class.js
-
+	// Importation de student-class.js
+	console.log('GiveMeFive est lancé');
 
 	var giveme5 = {
 
@@ -148,11 +149,10 @@
 		$('#add').on('click', function () {
 			$('#create').removeClass('dispnone');
 		});
+
 		//Fonction qui créer une card lors d'un clic sur Ajouter un élève
 		$('#submit').on('click', function () {
-
 			$('#create').addClass('dispnone');
-
 			var prenom = $('#firstname').val(),
 			    nom = $('#lastname').val(),
 			    id = new_user_id,
@@ -10452,10 +10452,47 @@
 			    points = studentmodif[profil_id].points,
 			    pics = studentmodif[profil_id].pics,
 			    modif = $('#modif');
+
 			modif.children('.modifuserimg').css('background-image', 'url(' + studentmodif[profil_id].pics + ')');
 			modif.children('h4').text(studentmodif[profil_id].prenom + ' ' + studentmodif[profil_id].nom);
 			modif.children('p').text(studentmodif[profil_id].points + ' pts');
 		});
+	};
+
+	var $ = __webpack_require__(3);
+
+/***/ },
+/* 5 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	exports.default = function (studentpoints) {
+		for (var i = studentpoints.length - 1; i >= 0; i--) {
+			studentpoints[i];
+
+			// Fonction pour ajouté ou retirer des points
+			$('#pres').on('click', function () {
+				console.log('Marche');
+				studentpoints.points += 10;
+				$('#points').text(studentpoints[i].points + ' pts');
+				console.log('points ajouté');
+			});
+			$('#abs').on('click', function () {
+				studentpoints.points -= 10;
+				$('#points').text(studentpoints[i].points + ' pts');
+			});
+			$('#late').on('click', function () {
+				studentpoints.points -= 2;
+				$('#points').text(studentpoints[i].points + ' pts');
+			});
+		}
+		// let 	modif	= $('#modif');
+
 	};
 
 	var $ = __webpack_require__(3);

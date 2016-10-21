@@ -10,9 +10,11 @@ export default function (studentmodif){
 			points 		=	studentmodif[profil_id].points,
 		           pics               	=	studentmodif[profil_id].pics,
 			modif		=	$('#modif');
+			
 		modif.children('.modifuserimg').css('background-image', 'url('+studentmodif[profil_id].pics+')');
 		modif.children('h4').text(studentmodif[profil_id].prenom+' '+studentmodif[profil_id].nom);
 		modif.children('p').text(studentmodif[profil_id].points+' pts');
 	});
+
 
 }

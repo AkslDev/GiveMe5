@@ -147,7 +147,7 @@ nav{
     	text-align: center;
 }
 .modif{
-	padding:27.4%;
+	padding: 30.7%;
 	background-color: rgba(34,34,34,0.74);
 }
 .modifuserimg{
@@ -208,7 +208,8 @@ nav{
     	margin-top: -3em;
 }
 .student h4{
-	margin-bottom: 1.5em;
+	margin-bottom: 2.5em;
+    	margin-top: 1.5em;
 	color: #222222;
 }
 .student p{

@@ -1,7 +1,7 @@
 // Importation de student-class.js
 import Student from './student_class';
 import studentlist from './student_list';
-// import studentmodif from './student_modif';
+import studentmodif from './student_modif';
 // import studentpoints from './student_points';
 
 
@@ -29,7 +29,7 @@ let giveme5 = {
 		]
 		console.log('Liste des élèves chargée');
 		studentlist(students);
-		// studentmodif(students);
+		studentmodif(students);
 		// studentpoints(students);
 	}
 }

@@ -58,14 +58,10 @@
 
 	var _student_modif2 = _interopRequireDefault(_student_modif);
 
-	var _student_points = __webpack_require__(5);
-
-	var _student_points2 = _interopRequireDefault(_student_points);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Importation de student-class.js
-	console.log('GiveMeFive est lancé');
+	console.log('GiveMeFive est lancé'); // Importation de student-class.js
+
 
 	var giveme5 = {
 
@@ -87,7 +83,6 @@
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
 			(0, _student_modif2.default)(students);
-			// studentpoints(students);
 		}
 	};
 
@@ -143,8 +138,6 @@
 			creer_card(students[i], $original, i);
 		}
 
-		var new_user_id = students.length += 1;
-
 		// Fonction click pour faire apparaitre/disparaitre le form
 		$('#add').on('click', function () {
 			$('#create').removeClass('dispnone');
@@ -152,14 +145,16 @@
 
 		//Fonction qui créer une card lors d'un clic sur Ajouter un élève
 		$('#submit').on('click', function () {
+			var new_user_id = students.length += 1;
 			$('#create').addClass('dispnone');
 			var prenom = $('#firstname').val(),
 			    nom = $('#lastname').val(),
 			    id = new_user_id,
-			    eleve = new _student_class2.default(prenom, nom, id);
+			    eleve = new _student_class2.default(prenom, nom);
 
 			students.push(eleve);
 			creer_card(eleve, $original, id);
+			(0, _student_modif2.default)(students);
 		});
 	};
 
@@ -167,12 +162,16 @@
 
 	var _student_class2 = _interopRequireDefault(_student_class);
 
+	var _student_modif = __webpack_require__(4);
+
+	var _student_modif2 = _interopRequireDefault(_student_modif);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	// ****** Appel de jQuery ******
 	var $ = __webpack_require__(3);
 
-	// ****** Importation de ma classe Student ******
+	// ****** Importation ******
 
 
 	// Fonction pour créer une carte
@@ -10457,42 +10456,6 @@
 			modif.children('h4').text(studentmodif[profil_id].prenom + ' ' + studentmodif[profil_id].nom);
 			modif.children('p').text(studentmodif[profil_id].points + ' pts');
 		});
-	};
-
-	var $ = __webpack_require__(3);
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	exports.default = function (studentpoints) {
-		for (var i = studentpoints.length - 1; i >= 0; i--) {
-			studentpoints[i];
-
-			// Fonction pour ajouté ou retirer des points
-			$('#pres').on('click', function () {
-				console.log('Marche');
-				studentpoints.points += 10;
-				$('#points').text(studentpoints[i].points + ' pts');
-				console.log('points ajouté');
-			});
-			$('#abs').on('click', function () {
-				studentpoints.points -= 10;
-				$('#points').text(studentpoints[i].points + ' pts');
-			});
-			$('#late').on('click', function () {
-				studentpoints.points -= 2;
-				$('#points').text(studentpoints[i].points + ' pts');
-			});
-		}
-		// let 	modif	= $('#modif');
-
 	};
 
 	var $ = __webpack_require__(3);

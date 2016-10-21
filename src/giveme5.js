@@ -2,7 +2,6 @@
 import Student from './student_class';
 import studentlist from './student_list';
 import studentmodif from './student_modif';
-import studentpoints from './student_points';
 
 
 console.log('GiveMeFive est lancé');
@@ -30,7 +29,6 @@ let giveme5 = {
 		console.log('Liste des élèves chargée');
 		studentlist(students);
 		studentmodif(students);
-		// studentpoints(students);
 	}
 }
 

@@ -2,8 +2,9 @@
 // ****** Appel de jQuery ******
 let $ = require("jquery");
 
-// ****** Importation de ma classe Student ******
+// ****** Importation ******
 import Student from './student_class';
+import studentmodif from './student_modif';
 
 // Fonction pour créer une carte
 function creer_card(student, $original, id){
@@ -35,7 +36,7 @@ function creer_card(student, $original, id){
 }
 
 // Function pour ajouter un élève lors d'un clic sur le bouton
-export default function(students) {
+export default function(students,) {
 
 	let $original = $('#user').detach();
 
@@ -44,7 +45,6 @@ export default function(students) {
 		creer_card(students[i], $original, i);
 	}
 
-	let new_user_id = students.length += 1;
 
 	// Fonction click pour faire apparaitre/disparaitre le form
 	$('#add').on('click', function() {
@@ -53,14 +53,17 @@ export default function(students) {
 
 	//Fonction qui créer une card lors d'un clic sur Ajouter un élève
 	$('#submit').on('click', function() {
+		let new_user_id = students.length += 1;
 		$('#create').addClass('dispnone');
 		let 	prenom	= 	$('#firstname').val(),
 			nom		= 	$('#lastname').val(),
 			id		= 	new_user_id,
-		 	eleve 		= 	new Student(prenom, nom, id);
+		 	eleve 		= 	new Student(prenom, nom);
 
 			students.push(eleve);
 			creer_card(eleve, $original, id);
+				studentmodif(students);
 	});
+
 
 }

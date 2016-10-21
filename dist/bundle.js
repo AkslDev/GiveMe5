@@ -56,8 +56,11 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Importation de mes fichiers JavaScript
+	// import studentmodif from './student_modif';
+	// import studentpoints from './student_points';
 
+
+	// Importation de student-class.js
 	console.log('GiveMeFive est lancé');
 
 	var giveme5 = {
@@ -79,6 +82,8 @@
 			new _student_class2.default('Aksl', 'Cqn', 0, 'img/axel.jpg'), new _student_class2.default('Loan', 'Campan', 0), new _student_class2.default('Joel', 'Alves', 0)];
 			console.log('Liste des élèves chargée');
 			(0, _student_list2.default)(students);
+			// studentmodif(students);
+			// studentpoints(students);
 		}
 	};
 
@@ -96,7 +101,7 @@
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-	var _class =
+	var Student =
 	// Création de la classe Student
 	/**
 	 * Represente un Eleve
@@ -104,8 +109,8 @@
 	 * @return {string}  Nom de l'élève
 	 * @param  {number} Points de l'élève
 	 */
-	function _class(prenom, nom, points, pics) {
-		_classCallCheck(this, _class);
+	function Student(prenom, nom, points, pics) {
+		_classCallCheck(this, Student);
 
 		this.prenom = prenom;
 		this.nom = nom;
@@ -113,7 +118,7 @@
 		this.pics = pics || 'img/h.png';
 	};
 
-	exports.default = _class;
+	exports.default = Student;
 
 /***/ },
 /* 2 */
@@ -127,58 +132,47 @@
 
 	exports.default = function (students) {
 
-		// Création de mes variables
-
 		var $original = $('#user').detach();
 
 		// Boucle pour ajouté un élève
-
 		for (var i = students.length - 1; i >= 0; i--) {
 			creer_card(students[i], $original, i);
 		}
 
-		// Fonction click pour faire apparaitre/disparaitre le form
-		$('#add').on('click', function () {
-			$('#create').removeClass('dispnone');
-		});
-		$('#submit').on('click', function () {
+		var new_user_id = students.length += 1;
 
-			$('#create').addClass('dispnone');
-			var prenom = $('#firstname').val(),
-			    nom = $('#lastname').val(),
-			    eleve = new _student_class2.default(prenom, nom);
-			students.push(eleve);
-			creer_card(eleve, $original);
-		});
-
+		// ************************************************************
 		// Fonction onClick pour modifier un élève
 		$(".student").on('click', function () {
+			console.log("ca marche");
 			$('#modif').removeClass('dispnone');
-
 			var profil_id = this.id,
 			    prenom = students[profil_id].prenom,
 			    nom = students[profil_id].nom,
 			    points = students[profil_id].points,
 			    pics = students[profil_id].pics,
 			    modif = $('#modif');
-
 			modif.children('.modifuserimg').css('background-image', 'url(' + students[profil_id].pics + ')');
 			modif.children('h4').text(students[profil_id].prenom + ' ' + students[profil_id].nom);
 			modif.children('p').text(students[profil_id].points + ' pts');
 		});
-		var modif = $('#modif');
 
-		modif.find('.present').on('click', function () {
-			students[profil_id].points += 10;
-			modif.children('p').text(students[profil_id].points + ' pts');
+		// Fonction click pour faire apparaitre/disparaitre le form
+		$('#add').on('click', function () {
+			$('#create').removeClass('dispnone');
 		});
-		modif.find('.late').on('click', function () {
-			students[profil_id].points -= 2;
-			modif.children('p').text(students[profil_id].points + ' pts');
-		});
-		modif.find('.abs').on('click', function () {
-			students[profil_id].points -= 10;
-			modif.children('p').text(students[profil_id].points + ' pts');
+		// .onclick pour créer un élève
+		$('#submit').on('click', function () {
+
+			$('#create').addClass('dispnone');
+
+			var prenom = $('#firstname').val(),
+			    nom = $('#lastname').val(),
+			    id = new_user_id,
+			    eleve = new _student_class2.default(prenom, nom, id);
+
+			students.push(eleve);
+			creer_card(eleve, $original, id);
 		});
 	};
 
@@ -188,10 +182,13 @@
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// Appel de jQuery
+	// ****** Appel de jQuery ******
 	var $ = __webpack_require__(3);
 
-	// Fonction creer_card
+	// ****** Importation de ma classe Student ******
+
+
+	// Fonction pour créer une carte
 	function creer_card(student, $original, id) {
 
 		var clone = $original.clone();
@@ -202,26 +199,22 @@
 		clone.children('p').text(student.points + ' pts');
 		clone.children('.userimg').css('background-image', 'url(' + student.pics + ')');
 		clone.appendTo('#userlist');
-
-		// Fonctions pour ajouter ou retirer des points depuis les cards
+		// Fonction pour ajouté ou retirer des points
 		clone.find('.present').on('click', function () {
 			student.points += 10;
 			clone.children('p').text(student.points + ' pts');
 		});
-
 		clone.find('.abs').on('click', function () {
 			student.points -= 10;
 			clone.children('p').text(student.points + ' pts');
 		});
-
 		clone.find('.late').on('click', function () {
 			student.points -= 2;
 			clone.children('p').text(student.points + ' pts');
 		});
-		// Fonctions pour ajouter ou retirer des points depuis la section " Modif "
 	}
 
-	// Function students
+	// Function pour ajouter un élève lors d'un clic sur le bouton
 
 /***/ },
 /* 3 */

@@ -1,4 +1,4 @@
-export default class{
+export default class Student{
 		// Création de la classe Student
 		/**
 		 * Represente un Eleve
